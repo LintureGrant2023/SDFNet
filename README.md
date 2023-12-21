@@ -6,7 +6,7 @@ This repository contains the implementation code for the paper:
 __Exploring Spatial Frequency Information for Enhanced Video Prediction Quality__
 
 ## Introduction
-
+The architecture of SDFNet:
 ![SDFNet](/figures/SDFNet.png "The overall framework of SDFNet")
 
 
@@ -20,9 +20,14 @@ __Exploring Spatial Frequency Information for Enhanced Video Prediction Quality_
 * `experiment_cfg.py` is the core file for model training, validating, and testing. 
 * `configs.py` is the parameter configuration.
 * `TDFL.py` contains the implement of 3DFL.
+##  Metric Validation:
+We firstly introduce a novel objective metric called 3D frequency loss (3DFL) based on 3D fast Fourier transform (3DFFT). As a DNN model-free and training-free metric, 3DFL provides an objective and rational approach to evaluate the similarity and absolute distance between videos. We provide visual comparisons of several traditional metrics on the KTH dataset. 
 
+![](/Multimedia_Files/1Metric_Vaildation/metric1.gif "")
 
-## Preparation
+This validation demonstrates that 3DFL, as a metric measuring absolute errors, has perceptual capabilities similar to LPIPS for assessing natural video quality, confirming its effectiveness as a reliable metric for evaluating video prediction performance. You can find more examples in the `Multimedia_Files/1Metric_Vaildation` folder.
+
+## Model Preparation
 
 ### 1. Environment install
 We provide the environment requirements file for easy reproduction:
@@ -70,7 +75,3 @@ More examples are available at `Multimedia_Files/3Human_Visualization` folder.
 ![](/Multimedia_Files/3Human_Visualization/Human_example1.gif "")
 
 
-## About Metric Validation:
-We provide visual comparisons of several traditional metrics on the KTH dataset. You can find more examples in the `Multimedia_Files/1Metric_Vaildation` folder.
-
-![](/Multimedia_Files/1Metric_Vaildation/metric1.gif "")
