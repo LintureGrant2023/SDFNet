@@ -1,33 +1,34 @@
-# Motion Direction Awareness: A Biomimetic Dynamic Capture Mechanism for Video Prediction
-![GitHub stars](https://img.shields.io/github/stars/LintureGrant/MDANet)  ![GitHub forks](https://img.shields.io/github/forks/LintureGrant/MDANet?color=green) 
+# Exploring Spatial Frequency Information for Enhanced Video Prediction Quality
+![GitHub stars](https://img.shields.io/github/stars/LintureGrant2023/SDFNet)  ![GitHub forks](https://img.shields.io/github/forks/LintureGrant2023/SDFNet?color=green) 
 
 This repository contains the implementation code for the paper:
 
-__Motion Direction Awareness: A Biomimetic Dynamic Capture Mechanism for Video Prediction__
+__Exploring Spatial Frequency Information for Enhanced Video Prediction Quality__
 
 ## Introduction
 
-![MDANet](/img/overview.png "The overall framework of MDANet")
+![SDFNet](/figures/SDFNet.png "The overall framework of SDFNet")
 
 
-MDANet contains an MLP-like temporal module, presenting a new paradigm for efficient video prediction. 
 
 ## Overview
 
 * `API/` contains dataloaders and metrics.
-* `cls_MD/` contains the implement of MD-Translator.
-* `MDAModel.py` contains the MDANet model.
+* `cls/` contains the implement of FATranslator.
+* `model_build.py` contains the SDFNet model.
 * `run.py` is the executable python file with possible arguments.
-* `core.py` is the core file for model training, validating, and testing. 
-* `param.py` is the parameter configuration.
+* `experiment_cfg.py` is the core file for model training, validating, and testing. 
+* `configs.py` is the parameter configuration.
+* `TDFL.py` contains the implement of 3DFL.
+
 
 ## Preparation
 
 ### 1. Environment install
 We provide the environment requirements file for easy reproduction:
 ```
-  conda create -n MDANet python=3.7
-  conda activate MDANet
+  conda create -n SDFNet python=3.7
+  conda activate SDFNet
 
   pip install -r requirements.txt
 ```
@@ -37,7 +38,7 @@ Our model has been experimented on the following four datasets:
 * [Moving MNIST](http://www.cs.toronto.edu/~nitish/unsupervised_video/)
 * [KTH](https://www.csc.kth.se/cvap/actions/)
 * [Human3.6M](http://vision.imar.ro/human3.6m/description.php) 
-* [WeatherBench](https://github.com/pangeo-data/WeatherBench)
+
 
 We provide a download script for the Moving MNIST dataset:
 
@@ -51,34 +52,25 @@ We provide a download script for the Moving MNIST dataset:
 This example provide the detail implementation on Moving MNIST, you can easily reproduce our work using the following command:
 
 ```
-conda activate MDANet
+conda activate SDFNet
 python run.py             
 ```
 Please note that __the model training must strictly adhere to the hyperparameter settings provided in our paper__; otherwise, reproducibility may not be guaranteed.
 
-## Result：
+## Result:
 
-MDANet predicts more accurate actions with less motion blurring compared to other models. Here are some qualitative visualization examples on the KTH dataset:
+SDFNet predicts more accurate actions with less motion blurring compared to other models. Here are some qualitative visualization examples:
+
+### KTH:
+More examples are available at `Multimedia_Files/2KTH_Visualization` folder.
+![](/Multimedia_Files/2KTH_Visualization/KTH_example1.gif "")
+
+### Human3.6M:
+More examples are available at `Multimedia_Files/3Human_Visualization` folder.
+![](/Multimedia_Files/3Human_Visualization/Human_example1.gif "")
 
 
-MDANet
+## About Metric Validation:
+We provide visual comparisons of several traditional metrics on the KTH dataset. You can find more examples in the `Multimedia_Files/1Metric_Vaildation` folder.
 
-
-![MDANet](/img/mda_1.gif "MDANet")
-
-
-SimVP:
-
-![SimVP](/img/simvp_a.gif "SimVP")
-
-PredRNNv2:
-
-![PredRNNv2](/img/predrnnv2_a.gif "PredRNNv2")
-
-PredRNNv1:
-
-![PredRNNv1](/img/predrnnv1_a.gif "PredRNNv1")
-
-ConvLSTM:
-
-![ConvLSTM](/img/convlstm_a.gif "ConvLSTM")
+![](/Multimedia_Files/1Metric_Vaildation/metric1.gif "")
