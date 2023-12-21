@@ -24,7 +24,7 @@ The architecture of SDFNet:
 We firstly introduce a novel objective metric called 3D frequency loss (3DFL) based on 3D fast Fourier transform (3DFFT). As a DNN model-free and training-free metric, 3DFL provides an objective and rational approach to evaluate the similarity and absolute distance between videos. We provide visual comparisons of several traditional metrics on the KTH dataset. 
 
 <!-- ![](/Multimedia_Files/1Metric_Vaildation/metric1.gif "") <img src="" width="50%" height="50%"> -->
-<img src="/Multimedia_Files/1Metric_Vaildation/metric1.gif" width = 60%>
+<img src="/Multimedia_Files/1Metric_Vaildation/metric1.gif" width = 40%>
 
 This validation demonstrates that 3DFL, as a metric measuring absolute errors, has perceptual capabilities similar to LPIPS for assessing natural video quality, confirming its effectiveness as a reliable metric for evaluating video prediction performance. You can find more examples in the `Multimedia_Files/1Metric_Vaildation` folder.
 
@@ -69,10 +69,12 @@ SDFNet predicts more accurate actions with less motion blurring compared to othe
 
 ### KTH:
 More examples are available at `Multimedia_Files/2KTH_Visualization` folder.
-![](/Multimedia_Files/2KTH_Visualization/KTH_example1.gif "")
+<!-- ![](/Multimedia_Files/2KTH_Visualization/KTH_example1.gif "") -->
+<img src="/Multimedia_Files/2KTH_Visualization/KTH_example1.gif" width = 40%>
 
 ### Human3.6M:
 More examples are available at `Multimedia_Files/3Human_Visualization` folder.
-![](/Multimedia_Files/3Human_Visualization/Human_example1.gif "")
+<!-- ![](/Multimedia_Files/3Human_Visualization/Human_example1.gif "") -->
+<img src="/Multimedia_Files/3Human_Visualization/Human_example1.gif" width = 40%>
 
 
